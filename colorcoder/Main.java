@@ -3,9 +3,9 @@ package colorcoder;
 import static colorcoder.ColorCodeAssociation.*;
 import static colorcoder.TestColorCode.*;
 
-public final class Start {
+public final class Main {
 
-    private Start() {
+    private Main() {
 
     }
 
