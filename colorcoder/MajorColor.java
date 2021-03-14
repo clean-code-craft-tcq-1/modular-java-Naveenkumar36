@@ -1,28 +1,26 @@
 package colorcoder;
 
-import static colorcoder.utils.EnumHelper.*;
-
 /**
  * @author {@literal Jayaram Naveenkumar (jayaram.naveenkumar@in.bosch.com)}
  */
-public enum MajorColor implements Color<Integer> {
+public enum MajorColor implements Color {
     WHITE(0),
     RED(1),
     BLACK(2),
     YELLOW(3),
     VIOLET(4);
-    private final int index;
     private static final String[] MAJOR_COLORS = {
-        "White", "Red", "Black", "Yellow", "Violet"
+          "White", "Red", "Black", "Yellow", "Violet"
     };
     public static final int MAJOR_COLOR_SIZE = MAJOR_COLORS.length;
+    private final int index;
 
     MajorColor(int index) {
         this.index = index;
     }
 
     @Override
-    public Integer fetchIndex() {
+    public int fetchIndex() {
         return index;
     }
 
@@ -33,6 +31,6 @@ public enum MajorColor implements Color<Integer> {
 
     public static MajorColor fetchInstance(int index) {
         int zeroBasedIndex = index - 1;
-        return fetchEnum(MajorColor.class, zeroBasedIndex / MAJOR_COLOR_SIZE);
+        return Color.fetchColorObject(MajorColor.class, zeroBasedIndex / MAJOR_COLOR_SIZE);
     }
 }
